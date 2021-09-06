@@ -1,0 +1,472 @@
+
+alloc_cleanb.h,70
+  r2Br 4,112
+  Ex 5,149
+  Ez 6,186
+  sBt 7,223
+  sin_theta 9,261
+
+alloc_core.h,385
+register int ia,9,367
+register int ia,ja;9,367
+  rhochrcur 11,388
+  rhospncur 12,423
+  integrand 13,458
+  gradcur 14,493
+  rho_old 15,528
+  b00 16,563
+  vv 17,598
+  bb 18,633
+  dovrc 19,668
+      gck[23,754
+      fck[24,795
+       gc[25,836
+       fc[26,877
+       dp[27,918
+       dq[28,959
+       wp[29,1000
+       wq[30,1041
+      dpk[31,1082
+      dqk[32,1123
+
+alloc_deltaw.h,72
+  register int i;3,73
+  rinteg_r 5,92
+    psij[7,147
+    psik[8,182
+
+alloc_main.h,792
+#define  R_Alloc 9,405
+#define LR_Alloc 10,442
+register int ia,12,487
+register int ia,ja;12,487
+  vt	16,603
+  bt	17,620
+  r	18,637
+  drdi	19,653
+  r2drdi	20,672
+  vnuc	21,692
+  rhochr	22,711
+  rhospn	23,731
+  grad	24,751
+  vto	25,770
+  integrand	26,788
+  bto	27,811
+  Vxc	28,829
+  Vxc0	29,847
+  Vc0	30,866
+  vt0	31,884
+  bt0	32,902
+  cos_theta	33,920
+  weights	34,955
+  for(ia=0; ia<TOTST;37,1029
+      GCK[39,1085
+      FCK[40,1114
+  for(ia=0; ia<TOTST;43,1150
+    orbdens[44,1180
+    orbspin[45,1207
+    orbgrad[46,1234
+    vsic[47,1261
+    bsic[48,1288
+    Vxcsic[49,1315
+  Rho 64,1678
+  Vxc_nsph 65,1701
+  Vc_nsph 66,1724
+  Mx 67,1747
+  Mz 68,1770
+  Bx 69,1793
+  Bz 70,1816
+  sources 71,1839
+  Rho_old 72,1862
+  Mx_old 73,1885
+  Mz_old 74,1908
+
+alloc_potat.h,126
+register i;5,116
+  y=7,129
+  y 9,155
+  rhor2 10,182
+  vc 11,213
+  aa 12,241
+  bb 13,269
+    ur[16,319
+    bgx[17,352
+
+ang_avrg.c,25
+void angular_avrg(8,127
+
+basis_xtrct.c,23
+void basis_xtrct(4,38
+
+bodeint.c,22
+double bodeint(5,112
+
+cleanb3.c,54
+void cleanb(8,175
+static void potcul_nsph_l(67,1586
+
+cmdline.c,103
+int scan_cmd_line_params(7,90
+static void print_short_help(49,1000
+static void print_manual(61,1348
+
+core.h,20
+#define IPRINT 1,0
+
+core_util.c,781
+double Hec(3,20
+void sicpot(14,215
+int nodes(54,1340
+double elimit(70,1617
+#define UNEND 84,1855
+int n0val(85,1916
+int turning_pt(97,2087
+double ecorrect(110,2303
+void outward(129,2771
+double setnodes(184,4563
+#define DVSTEP 264,7053
+#define TOLVAR 265,7109
+#define ITERMAX 266,7180
+#define TRYMIX 267,7254
+double newton_old(269,7341
+#define nmatch 277,7694
+#define nzero 278,7720
+#define DVSTEP 540,14682
+#define TOLVAR 541,14740
+#define ITERMAX 542,14811
+double newton(543,14885
+#define nmatch 551,15234
+#define nzero 552,15260
+#define DVSTEP 674,18328
+#define TOLVAR 675,18386
+#define ITERMAX 676,18458
+double newton2(677,18532
+#define nmatch 685,18882
+#define nzero 686,18908
+void glue_old(884,24588
+void glue(933,25969
+void normalize(985,27367
+
+coredir.c,161
+#define NPEMAX 3,20
+#define ITMAX 4,93
+#define TOL 5,166
+#define cgo 7,240
+#define C	10,370
+#define Nucl	11,388
+void coredir(13,414
+# define h24 68,2477
+
+coreerr.c,20
+void coreerr(6,135
+
+corevnew.c,16
+void core(4,38
+
+deltaw_nc.c,116
+#define  A(A3,20
+#define  B(B4,74
+struct State State6,129
+void deltaw_nc(15,316
+static void getpsi(165,4732
+
+dentopot_nc.c,25
+void dentopot_nc(16,385
+
+diag_matrix.c,51
+static void convert(3,20
+void diag_matrix(21,400
+
+diagrs.c,80
+#  define RS 5,53
+#  define RS 7,76
+#define _TRUE 10,100
+void diagrs(12,117
+
+diagrsg.c,83
+#  define RSG 5,53
+#  define RSG 7,78
+#define _TRUE 10,104
+void diagrsg(12,121
+
+diagsm2d.c,21
+void diagsm2d(7,129
+
+exc.c,1115
+#define CUBSQR2	34,1676
+#define TWO4_3	35,1721
+#define THRD	36,1767
+#define THRD4	37,1809
+#define XFACTOR 38,1849
+#define gamp 44,2033
+#define  b1p 45,2055
+#define  b2p 46,2077
+#define  aap 47,2099
+#define  bbp 48,2121
+#define  ccp 49,2142
+#define  ddp 50,2163
+#define gamf 51,2185
+#define  b1f 52,2207
+#define  b2f 53,2229
+#define  aaf 54,2251
+#define  bbf 55,2274
+#define  ccf 56,2296
+#define  ddf 57,2318
+#define ap2 61,2393
+#define bp2 62,2413
+#define af2 63,2431
+#define bf2 64,2451
+#define vap2 65,2469
+#define vaf2 66,2490
+#define ap3 70,2564
+#define bp3 71,2584
+#define af3 72,2602
+#define bf3 73,2622
+#define vap3 74,2640
+#define vaf3 75,2661
+#define ap4 79,2735
+#define bp4 80,2755
+#define vap4 81,2773
+#define FZZ	84,2827
+double vxc(86,2849
+double epsxc(224,6835
+static double pzcpot(317,8976
+static double pwcpot(337,9461
+static double hlcpot(364,10337
+static double pzce(375,10530
+static double pwce(393,10884
+static void pwgcorr(410,11356
+static double hlce(431,11907
+#define CUB3PI2	444,12112
+static double vxrel(446,12190
+static double exrel(455,12370
+
+ferr.c,45
+double ferr(3,61
+static double vdet(38,852
+
+free_cleanb.h,0
+
+free_core.h,49
+register int ia,9,367
+register int ia,ja;9,367
+
+free_deltaw.h,23
+  register int i;3,72
+
+free_potat.h,18
+register i;5,115
+
+gauleg.c,20
+void gauleg(10,279
+
+globalvar.h,238
+const int nqntab[4,108
+const int lqntab[5,196
+const char *orbname[6,284
+const int ord[10,456
+struct Options opt;16,698
+struct Flags fl;17,718
+struct State_qn st[18,735
+int nrmax,20,763
+int nrmax, nlmax;20,763
+FILE *fperr;21,781
+
+iexcvxc_nc.c,45
+double iexc_nc(3,20
+double ivexc_nc(37,761
+
+input.c,145
+#  define CURRENT_DATE 4,41
+void input_param(9,122
+#define  prbool(prbool106,4989
+void printinfo(108,5032
+static void create_ini(251,10351
+
+integ2d.c,21
+double integ2d(3,20
+
+l_to_c.c,17
+char l_to_c(1,0
+
+magn2_nc.c,254
+#define  A(A3,20
+#define  B(B4,74
+void magn2_nc(33,840
+void nii(80,2131
+void nij(100,2488
+void getpsi(129,3138
+int idxmax(197,4796
+void orbital_density(214,5119
+void init_density(303,7145
+void total_density(312,7329
+void pure_state(326,7632
+
+main.c,46
+int main(3,19
+static int maxindex(912,26764
+
+main.h,56
+#define  prbool(prbool4,43
+#define  COEFFCUTOFF 5,85
+
+manual.h,0
+
+matcherr.c,21
+double matcherr(1,0
+
+mesh.c,17
+void rmesh(3,19
+
+my_f2c.h,98
+#define _V_MY_F2C7,132
+static double *matrix_to_fortran(22,891
+static void matrix_to_c(50,1972
+
+my_math.h,282
+#define _MY_MATH2,17
+#define v_abs(v_abs6,54
+#define v_nint(v_nint7,99
+#define v_max(v_max8,160
+#define v_min(v_min9,211
+#define v_sign(v_sign10,262
+typedef int Logical;Logical12,315
+#define TRUE 14,337
+#define FALSE 15,358
+#define M_PI 17,380
+#define M_4PI	18,422
+
+niocc.c,53
+double niocc(12,231
+static void create_occ(77,1716
+
+nosphint.c,19
+void nsphint(3,20
+
+perr.c,80
+extern FILE *fperr;4,40
+void perr(7,112
+void operr(15,222
+void clerr(24,404
+
+plotfield.c,45
+void plotfield(3,20
+void plotscalar(41,891
+
+potat.c,18
+void potat(8,156
+
+potcul.c,24
+void potcul_ryd(11,261
+
+potcul_nsph.c,27
+double potcul_nsph(18,514
+
+prepare_qn_tables.c,29
+void prepare_qn_tables(3,20
+
+prepat.c,223
+#define nat 9,127
+int prepat(17,373
+static void fillin(252,6600
+static char Tolower(265,6843
+static char Toupper(272,6943
+static void expandsq(279,7043
+#define Elif(Elif296,7399
+static void create_el_str(538,17260
+
+printout.c,104
+void print_rmeans(3,20
+void print_base(68,2223
+void print_avect(122,3876
+void print_deltaw(153,4818
+
+relat.h,670
+#define _RELATH2,16
+#define CURRENT_VERSION 4,33
+typedef double *Dbp;Dbp15,226
+typedef double **Grid2d;Grid2d16,247
+typedef int bool;bool17,272
+#define  TOTST	19,292
+#define  TOTSH	20,354
+#define RLoop(RLoop22,428
+#define LLoop(LLoop23,472
+struct Options Options26,518
+struct Flags Flags51,939
+struct State_qn State_qn68,1397
+extern int nrmax,80,1824
+extern int nrmax, nlmax;80,1824
+extern FILE *fperr;81,1849
+extern struct Options opt;83,1870
+extern struct Flags fl;84,1897
+extern struct State_qn st[85,1921
+extern const int nqntab[86,1950
+extern const int lqntab[87,1977
+extern const int    ord[88,2004
+extern const char *orbname[89,2031
+
+rinvgj.c,20
+void rinvgj(14,823
+
+rs.f,236
+      subroutine rs(rs2,1
+      double precision function pythag(pythag61,1958
+      subroutine tql1(tql181,2461
+      subroutine tql2(tql2216,6290
+      subroutine tred1(tred1386,11242
+      subroutine tred2(tred2521,14933
+
+rsg.f,386
+      subroutine rsg(rsg2,1
+      double precision function epslon epslon65,2133
+      subroutine tqlrat(tqlrat101,3467
+      double precision function gpythag(gpythag231,7198
+      subroutine rebak(rebak251,7703
+      subroutine reduc(reduc314,9613
+      subroutine gtql2(gtql2429,13168
+      subroutine gtred1(gtred1599,18124
+      subroutine gtred2(gtred2734,21816
+
+sic-nsph.c,239
+void sic_nsph(81,2543
+static void deltawic(209,6975
+static void gendiag_matrix(282,8939
+static void select_v(346,10648
+static void join_matrix(369,11229
+static void delta_sicpot_matrix(409,12137
+static void overlap_matrix(480,14285
+
+simpson.c,20
+double simpson(1,0
+
+spharm_nc.c,40
+double LegPol(4,69
+double Y_nc(43,757
+
+syst3x3.c,48
+void syst3x3(5,60
+static double det3x3(36,646
+
+tensor.c,387
+#define _V_TENSORC5,101
+void v_error(13,248
+double *vector_alloc(22,374
+void vector_cpy(32,560
+double **matrix_alloc(38,678
+void matrix_free(54,1063
+void matrix_transpose(64,1211
+void matrix_cpy(77,1416
+double **matrix_load(85,1589
+double ***tensor_alloc(125,2450
+void tensor_free(146,3011
+double ***tensor_load(161,3240
+void tensor_cpy(203,4218
+void tensor_print(213,4441
+
+tensor.h,64
+#define _V_TENSOR6,137
+#define vector_free(vector_free18,378
+
+ylag.c,43
+#define labs(labs1,0
+double ylag(15,814

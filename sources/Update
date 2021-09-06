@@ -1,0 +1,8 @@
+2002-06-10  v.3.0
+  - Function prepat_qn_table split from main.c
+2002-06-11  v.3.0
+  - use of only one loop with 'ic' in core.c
+  - new file core_util.c
+2002-06-25  v.3.1
+  - well organized core.c now renamed corevnew.c
+  - new option MATCHING for inward-outward matching
