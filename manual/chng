@@ -1,0 +1,18 @@
+#!/bin/tcsh
+#
+#	MAGRU (Klaus Koepernik )  Wed Jun 01 13:07:02 1994
+#
+#	changes the word $1 into word $2 in the file $3 
+#
+########################################################################
+if($#argv != 3) then 
+ echo "chng word1 word2 FILE \n   changes word1 into word2 in the file FILE"
+ exit
+endif 
+ex $3 << NED
+set noignorecase
+1,\$ s/$1/$2/g
+w
+q
+NED
+exit

@@ -1,0 +1,143 @@
+\documentstyle{article}
+
+\renewcommand{\thesection}{\Alph{section}.}
+
+\def\t{\texttt}
+\def\e{\emph}
+\def\mr{\mathrm}
+
+\begin{document}
+\title{\Huge\bf ATOM\\manual}
+\author{Vito D.P. Servedio}
+\date{\today}
+\maketitle
+
+\section{Description}
+ATOM is a program which allows to calculate the ground state electron
+density and energy of isolated atoms and ions.
+It is based on the Spin Density Functional Theory (SDFT) approach to the
+many body problem. 
+In most of the cases the Local Spin Density Approximation (LSDA) is
+used, the only exception being the choice of a source free exchange
+and correlation (XC) field.
+The basic equations underlying the solution of the atomic problem are
+chosen to be the Kohn-Sham-Dirac ones.
+As a result, the effective one electron eigenfunctions are represented
+by bispinors. 
+This treatment is commonly referred to as ``fully relativistic''.
+The reader is invited to refer to the present and wide literature on
+the subject.
+
+The program ATOM was written in \e{C} without the use of any machine
+dependent code and can thus be compiled on any architecture, although
+only \e{HP-UX} and \e{Linux} systems were personally tested.
+The matrix diagonalization routine is written in \e{Fortran77} and was
+imported from the \e{EISPACK} routines. 
+In absence of a fortran compiler, a standard \e{f2c} conversion of
+this routine can be done before the compilation process.
+
+\section{Running the program}
+In the following we refer to the executable name as \t{ATOM}, but
+you may have changed it according to your personal taste.
+Of course the directory containing the executable must be present in
+your PATH environmental variable. 
+To run the program just type its name on the command line.
+The program requires some input files to run. 
+In case these files are not present, they will be created
+automatically.
+These files, the structure of which will be dealt with later, are:
+\begin{itemize}
+\item \t{relat.ini}, containing the list of basic options and
+parameters. It is a mandatory file.
+\item \t{El\_structure}, containing the electronic configuration of
+the atom. This file may be substituted by the specification on the
+command line of the atom or ion symbol to be calculated.
+\item \t{niocc}, which is required in the case of a calculation with
+non integer occupation numbers.
+\end{itemize}
+\section{Command line parameters}
+In the following we shall describe the accepted command line
+parameters:
+\begin{description}
+\item[-f filename] The program will use the initialization file
+\e{filename} instead of the default \t{relat.ini}.
+\item[-pN] the program will output the density of the orbital number N
+to a file.
+\item[-M] It will output the present manual in the file \t{MANUAL.ps}
+and exit.
+\item[-h] A short list of these command line options will be printed
+on the standard output device and exit.
+\item[:elem] The ground state electronic configuration of the atom or
+ion \e{elem} will be used instead of reading the electronic
+configuration \t{El\_structure} file.
+\end{description}
+As an example to run the program for the potassium plus one ion with
+the default settings, you could type twice:\\
+\t{ATOM :K+}
+
+\section{Ini file}
+\begin{description}
+
+% Master flags
+\item[NRMAX] 
+	Number of points in the radial mesh. The memory will be
+	dynamically allocated. 
+\item[MESH]
+	Kind of radial mesh \{$i=0\ldots(\mr{NRMAX-1})$\}:
+	\begin{description}
+	\item[0]
+		Linear grid.
+		\( r_i=\frac{R_{\mr{max}}}{\mr{NRMAX}} (i+1) \)
+	\item[1]
+		Quadratic grid.
+		\( r_i=\frac{R_{\mr{max}}}{\mr{NRMAX}^2} (i+1)^2 \)
+	\item[2]
+		Logarithmic grid.
+		\( r_i=R_{\mr{min}}\mr{exp}
+		[\frac{\log(R_{\mr{max}}/R_{\mr{min}})}{\mr{NRMAX}-1}
+		i ]\)
+	\end{description}
+	Since in the case of a point like nucleus, the relativistic
+	$s_{1/2}$ and $p_{1/2}$ states are singular at the origin, the
+	radial grid never starts with $r$=0.
+\item[NVERS]
+\item[XCHNG]
+\item[NSPIN]
+\item[USESIC]
+\item[NUCLEUS]
+\item[NOSPH]
+\item[NOCOLL]
+\item[CLEAN\_FIELD]
+\item[NONINTOCCNUM]
+
+% Basic parameters
+\item[C]
+\item[BCONST]
+\item[RMIN]
+\item[RMAX]
+\item[MIXING]
+\item[ACCRCY]
+\item[ANYSHELL]
+
+% Non-spherical stuff
+\item[NLMAX]
+\item[EXTRASHELL]
+\item[MAXLEXP]
+\item[FIXOCCNUM]
+\item[NRRECTPT]
+
+% Output control
+\item[PRINT\_BASE]
+\item[WRITE\_COUPLING]
+\item[WRITE\_DELTAW]
+\item[NSPHORBSIC]
+\item[COMPTON\_PROFILE]
+\item[PRINTRHO]
+\item[PRINTMAGN]
+\item[PRINTPOT]
+\item[PRINTENRG]
+\item[R\_POWERS]
+\item[IPRINT]
+
+\end{description}
+\end{document}

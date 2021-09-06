@@ -1,0 +1,24 @@
+##################################################################
+#
+# Makefile for the ATOM manual.
+# created  27 March 2002
+#
+##################################################################
+
+SHELL=/bin/tcsh
+
+MAN = manual.h
+
+SOURCEDIR = ../sources
+
+$(MAN): manual.tex Makefile.manual
+	latex $< > /dev/null
+	latex $< > /dev/null
+	@dvips manual.dvi -o manual.ps
+	@./chng '%' '%%' manual.ps > /dev/null
+	@./chng '\\' '\\\\' manual.ps > /dev/null
+	@./chng '"' '\\"' manual.ps > /dev/null
+	@echo 'fprintf(fp,""' >! $(MAN)
+	@awk '{ printf("\"%s\\n\"\n",$$0) }' < manual.ps >> $(MAN)
+	@echo ');' >> $(MAN)
+	@cp -f $(MAN) $(SOURCEDIR)

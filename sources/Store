@@ -1,0 +1,33 @@
+#! /bin/tcsh
+
+set sys = `uname`
+
+set a = `date +ATOM%y%m%d`
+
+set d =  .
+set mandir = "../manual"
+set destdir1 = "~/Storage"
+#set destdir2 = "/home/.archive/servedio/Storage"
+
+if ($sys == "HP-UX") then
+    echo "Creating $a.zip"
+    zip -q $a $d/{*.[cfh],Makefile,Store,Update} \
+	      $mandir/{Makefile.manual,chng,manual.tex}
+
+    echo "Checking integrity of $a.zip"
+    unzip -tq $a.zip
+
+    echo "Moving $a.zip to $destdir1"
+    mv -f $a.zip $destdir1
+
+#    echo "Copying $a.zip to $destdir2"
+#    cp -f $destdir1/$a.zip $destdir2
+
+else # Linux
+    echo "Creating $a.tgz"
+    tar -chzf $a.tgz $d/{*.[cfh],Makefile,Store,Update} \
+	-C $mandir {Makefile.manual,chng,manual.tex}
+
+    echo "Moving $a.tgz to $destdir1"
+    mv -f $a.tgz $destdir1
+endif
